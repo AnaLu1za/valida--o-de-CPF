@@ -20,22 +20,30 @@ Este código JavaScript implementa uma função básica para validar um endereç
 - ``forms[0]:`` Acessa o primeiro formulário do documento.
 - ``email:`` Acessa o elemento de entrada com o nome "email" dentro do formulário.
 - ``value:`` Obtém o valor (texto) inserido pelo usuário nesse campo. 
+
 <br>
 <br>
+
 **indexOf():**
  - É um método de string que retorna o índice da primeira ocorrência de um caractere específico dentro de uma string. Se o caractere não for encontrado, retorna -1.
 - ``indexOf('@'):`` Verifica se o caractere "@" existe no endereço de e-mail.
 - ``indexOf('.'):`` Verifica se o caractere "." existe no endereço de e-mail.
+
 <br>
 <br>
+
 **alert():**
 - Exibe uma caixa de diálogo com uma mensagem para o usuário.
+
 <br>
 <br>
+
 **return:**
 - Interrompe a execução da função e retorna um valor. Neste caso, return false impede o envio do formulário.
+
 <br>
 <br>
+
 **document.getElementById('email').innerHTML:**
 - ``document.getElementById('email'):`` Obtém o elemento HTML com o ID "email".
 - ``innerHTML:`` Define o conteúdo HTML dentro desse elemento.
