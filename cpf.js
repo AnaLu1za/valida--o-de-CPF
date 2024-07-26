@@ -1,12 +1,12 @@
 // VALIDAÇÃO DE CPF DIRETO DO JAVASCRIPT
 // Adicionando escutador ao formulário
 document.getElementById('cpfForm').addEventListener('submit', function(event){
-    event.preventDefault();
+    event.preventDefault(); // Impede o envio padrão do formulário
  
-    const cpf = document.getElementById('cpf').value;
-    const msg = document.getElementById('message');
+    const cpf = document.getElementById('cpf').value; // Obtém o valor do campo CPF
+    const msg = document.getElementById('message'); // Obtém a referência ao elemento para mostrar a mensagem
  
-    if(validarCPF(cpf)){
+    if(validarCPF(cpf)){ // Chama a função de validação e verifica o resultado
         msg.textContent = 'O CPF é válido!';
         msg.style.color = 'green';
     }else{
@@ -21,7 +21,7 @@ function validarCPF(cpf){
  
     // Estrutura de decisão para verificar quantidade de dígitos e se todos os digitos são iguais
     if(cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)){
-        return false;
+        return false; // CPF inválido se não tiver 11 dígitos ou todos os dígitos forem iguais
     }
    
     let soma = 0;
@@ -29,16 +29,16 @@ function validarCPF(cpf){
  
     // Validando o primeiro digito verificador
     for(let i=1;i <= 9;i++){
-        soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+        soma += parseInt(cpf.substring(i-1, i)) * (11 - i); // Calcula a soma ponderada
     }
  
-    resto = (soma * 10) % 11;
+    resto = (soma * 10) % 11;  // Calcula o resto da divisão por 11
  
     if((resto === 10) || (resto === 11)){
         resto = 0;
     }
     if(resto !== parseInt(cpf.substring(9, 10))){
-        return false;
+        return false; // Se o resto não corresponder ao dígito verificador, o CPF é inválido
     }
  
     soma = 0;
@@ -56,6 +56,7 @@ function validarCPF(cpf){
     if(resto !== parseInt(cpf.substring(10, 11))){
         return false;
     }
- 
+
+     // Se passou por todas as validações, o CPF é válido
     return true;
 }
