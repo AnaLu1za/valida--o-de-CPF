@@ -14,6 +14,10 @@
 ## Introdução e-mail
 Este código JavaScript implementa uma função básica para validar um endereço de e-mail. A função verifica se o campo de e-mail está preenchido e se contém o caractere "@" e um ponto ".".
 
+<br>
+
+![e-mail](img/email-video.gif)
+
 ## Recursos do JavaScript utilizados 
 **document.forms[0].email.value:**
 - ``document:`` Representa o documento HTML completo.
@@ -59,6 +63,9 @@ Este código JavaScript implementa uma função básica para validar um endereç
 ## Introdução CPF
 Este código JavaScript implementa uma função de validação de CPF, um número de identificação individual utilizado no Brasil. A validação é crucial para garantir a integridade dos dados e evitar fraudes. O código verifica se o CPF possui 11 dígitos, se não possui todos os dígitos iguais e se os dígitos verificadores estão corretos, seguindo o algoritmo padrão de cálculo do CPF.
 
+<br>
+
+![cpf](img/cpf-video.gif)
 
 ## Recursos de JavaScript utilizados 
 - ``document.getElementById():`` 
@@ -80,7 +87,7 @@ Este código JavaScript implementa uma função de validação de CPF, um númer
 - ``for:`` 
     Estrutura de repetição para iterar sobre os dígitos do CPF e realizar os cálculos necessários.
 
-## Lógica da validação CPF
+### Lógica da validação CPF
 1. Obtenção do CPF: O valor do CPF é obtido do campo de entrada do formulário.
 2. Remoção de caracteres não numéricos: São removidos todos os caracteres que não sejam dígitos do CPF.
 3. Verificação da quantidade de dígitos: O CPF deve ter exatamente 11 dígitos.
