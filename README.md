@@ -124,7 +124,7 @@ Este código JavaScript implementa uma função de validação de CPF, um númer
 * [Site de animações para css](https://storyset.com/search)
 * [Paleta de cores para html](https://paletadecolores.online/pt/azul/indigo/)
 * [Conversor de MP4 para Gif](https://cloudconvert.com/)
-* [Gid divisor de texto](https://steemit.com/pt/@coyotelation/20-divisores-de-texto-em-gif-apenas-copie-e-cole-confira)
+* [Gif divisor de texto](https://steemit.com/pt/@coyotelation/20-divisores-de-texto-em-gif-apenas-copie-e-cole-confira)
 
 
 ## Autor(a)
