@@ -1,218 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-body{
-    margin: 0;
-    font-family: 'Noto Sans', sans-serif;
-}
-body *{
-    box-sizing: border-box;
-}
-.main-cpf{
-    width: 100vw;
-    height: 100vh;
-    background-color: #201b2c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.left-login{
-    width: 50vw;
-    right: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.left-login > h1{
-    font: 3vw;
-    color: #77ffc0;
-}
-.left-login-img{
-    width: 35vw;
-}
-.right-login{
-    width: 50vw;
-    right: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.card-login{
-    width: 60%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 35px;
-    background: #2f2841;
-    border-radius: 20px;
-    box-shadow: 0px -10px 40px #00000056;
-}
-.card-login > h1{
-    color: #00ff88;
-    font-weight: 800;
-    margin: 0;
-}
-.textfield{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px 0px;
-}
-.textfield > input{
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background: #514869;
-    color: #f0ffffde;
-    font-size: 12pt;
-    box-shadow: 0px -10px 40px #00000056;
-    outline: none;
-    box-sizing: border-box;
-}
-.textfield > label{
-    color: #f0ffffde;
-    margin-bottom: 10px;
-}
-.textfield > input::placeholder{
-    color: #f0ffff94;
-}
-button{
-    width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #2b134b;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  display: flex; /* Cria um container flex para centralizar o conteúdo */
+  justify-content: center; /* Alinha o conteúdo horizontalmente no centro */
+  align-items: center; /* Alinha o conteúdo verticalmente no centro */
+  min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da viewport */
+  background-color: #f0f0f0; /* Cor de fundo suave */
 }
 
-@media only screen and (max-width: 950px){
-    .card-login{
-      width: 85%;
-    }
-  }
-  
-  @media only screen and (max-width: 600px){
-    .main-login{
-      flex-direction: column;
-    }
-  
-    .left-login > h1 {
-      display: none;
-    }
-  
-    .left-login {
-      width: 100%;
-      height: auto;
-    }
-  
-    .right-login {
-      width: 100%;
-      height: auto;
-    }
-  
-    .left-login-image {
-      width: 40vh;
-    }
-  
-    .card-login {
-      width: 90%;
-    }
-  }
-
-.cpf-senha{
-    color: antiquewhite;
-}
-a{
-    color: antiquewhite;
-}
-.cpf-botao{
-    width: 100%;
-    padding: 16px 0px;
-    margin: 0px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #2b134b;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
-}
-.textfield img{
-  position: relative;
-  bottom: 36px;
-  left: 300px;
-}
-body{
-  background-color: #201b2c;
-}
-.main-content {
-  padding: 50px; 
-  background-color: #201b2c;
-  color: aliceblue;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content h1 {
-  font-size: 2rem; 
-  margin-bottom: 15px; 
-  color: #f0ffffde;
-}
-
-.main-content p {
-  font-size: 1rem; 
-  line-height: 1.5; 
-  margin-bottom: 25px; 
-  color: aliceblue;
-}
-
-.user-options {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-}
-
-.option-card {
-  width: calc(50% - 20px); 
-  margin: 10px;
+/* Estilos do formulário */
+form {
+  background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
-  background-color: #2f2841; 
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 300px; /* Largura máxima do formulário */
+}
+
+/* Estilos do título */
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos do label */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilos do input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estilos do botão */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  transition: all 0.2s ease-in-out; 
+  margin-top: 10px;
 }
 
-
-.option-card:hover {
-  background-color: #201b2c; 
-  transform: translateY(-2px); 
+/* Estilos da mensagem de erro */
+#email {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+body {
+  font-family: Arial, sans-serif; 
+  text-align: center; /*O conteúdo é centralizado horizontalmente usando text-align: center; no seletor body*/
+  margin: 50px;
 }
 
-.option-card img {
-  margin-bottom: 10px; 
-  width: 50px; 
-  height: 50px; 
+h1 {
+  margin-bottom: 20px;
 }
 
-.option-card h3 {
-  font-size: 1.2rem; 
-  margin-bottom: 5px; 
+label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.option-card p {
-  font-size: 0.9rem;
-  line-height: 1.2; 
+form {
+  display: flex; /*O formulário é configurado como uma coluna centralizada usando display: flex;, flex-direction: column; e align-items: center;*/
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.cpf-botao {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#message { /*Código para fazer com que a mensagem de erro terá a cor vermelha e um espaçamento superior.*/
+  color: red;
+  margin-top: 10px;
 }
