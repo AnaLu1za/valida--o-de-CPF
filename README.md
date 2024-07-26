@@ -2,10 +2,11 @@
 
 ## Índice
 * [Introdução e-mail](#introdução-e-mail)
-* [Funcionalidades e-mail](#funcionalidades-e-mail)
-* [Descrição CPF](#descrição-cpf)
+* [Funcionalidades e-mail](#recursos-do-javascript-utilizados)
+* [Lógica da validação (e-mail)](#lógica-da-validação-e-mail)
 * [Introdução CPF](#introdução-cpf)
-* [Funcionalidades CPF](#funcionalidades-cpf)
+* [Recursos de JavaScript utilizados](#recursos-de-javascript-utilizados)
+* [Lógica da validação (CPF)](#lógica-da-validação-cpf)
 * [Técnicas e tecnologias utilizadas](#técnicas-e-tecnologias-utilizadas)
 * [Fontes Consultadas](#fontes-consultadas)
 
@@ -18,35 +19,73 @@ Este código JavaScript implementa uma função básica para validar um endereç
 - ``document:`` Representa o documento HTML completo.
 - ``forms[0]:`` Acessa o primeiro formulário do documento.
 - ``email:`` Acessa o elemento de entrada com o nome "email" dentro do formulário.
-- ``value:`` Obtém o valor (texto) inserido pelo usuário nesse campo.
-- **indexOf():**
-- É um método de string que retorna o índice da primeira ocorrência de um caractere específico dentro de uma string. Se o caractere não for encontrado, retorna -1.
+- ``value:`` Obtém o valor (texto) inserido pelo usuário nesse campo. 
+<br>
+<br>
+**indexOf():**
+ - É um método de string que retorna o índice da primeira ocorrência de um caractere específico dentro de uma string. Se o caractere não for encontrado, retorna -1.
 - ``indexOf('@'):`` Verifica se o caractere "@" existe no endereço de e-mail.
 - ``indexOf('.'):`` Verifica se o caractere "." existe no endereço de e-mail.
-- **alert():**
+<br>
+<br>
+**alert():**
 - Exibe uma caixa de diálogo com uma mensagem para o usuário.
-- **return:**
+<br>
+<br>
+**return:**
 - Interrompe a execução da função e retorna um valor. Neste caso, return false impede o envio do formulário.
-- **document.getElementById('email').innerHTML:**
+<br>
+<br>
+**document.getElementById('email').innerHTML:**
 - ``document.getElementById('email'):`` Obtém o elemento HTML com o ID "email".
 - ``innerHTML:`` Define o conteúdo HTML dentro desse elemento.
 
-### Lógica da Validação 
-- Obtém o valor do campo de e-mail: A função pega o texto digitado no campo de e-mail.
-- Verifica a presença de "@" e ".": Utiliza o método indexOf() para verificar se os caracteres "@" e "." estão presentes no endereço de e-mail.
-- Exibe mensagem de erro ou confirmação: Se o e-mail for inválido (não contém "@" ou "."), exibe uma mensagem de erro. Caso contrário, exibe uma mensagem de confirmação e atualiza o conteúdo de um elemento HTML com o valor do e-mail.
-- Impede o envio do formulário: Se o e-mail for inválido, retorna false para evitar o envio do formulário.
+### Lógica da validação e-mail 
+1. **Obtém o valor do campo de e-mail:** A função pega o texto digitado no campo de e-mail.
+2. **Verifica a presença de "@" e ".":** Utiliza o método indexOf() para verificar se os caracteres "@" e "." estão presentes no endereço de e-mail.
+3. **Exibe mensagem de erro ou confirmação:** Se o e-mail for inválido (não contém "@" ou "."), exibe uma mensagem de erro. Caso contrário, exibe uma mensagem de confirmação e atualiza o conteúdo de um elemento HTML com o valor do e-mail.
+4. **Impede o envio do formulário:** Se o e-mail for inválido, retorna false para evitar o envio do formulário.
 
-[<code><img height="102" src="https://pa1.aminoapps.com/6507/6aa143d7fff00eb6650f218bae88398e6e377410_hq.gif"></code>]
+![miau.gif](https://steemitimages.com/DQmZCo76MUSeg8WNYUqr9UMGig3kufJWfENY337KfSbpoJC/miau.gif)
 
-## Descrição CPF
-
-
-## Introdução CPF 
+## Introdução CPF
+Este código JavaScript implementa uma função de validação de CPF, um número de identificação individual utilizado no Brasil. A validação é crucial para garantir a integridade dos dados e evitar fraudes. O código verifica se o CPF possui 11 dígitos, se não possui todos os dígitos iguais e se os dígitos verificadores estão corretos, seguindo o algoritmo padrão de cálculo do CPF.
 
 
-## Funcionalidades CPF
+## Recursos de JavaScript utilizados 
+- ``document.getElementById():`` 
+    Utilizado para obter referências a elementos HTML pelo seu ID, como o formulário, o campo de entrada do CPF e o elemento para exibir a mensagem de resultado.
+- ``addEventListener():`` 
+    Adiciona um ouvinte de eventos ao formulário, permitindo executar uma função específica (neste caso, a função de validação) quando o formulário é enviado.
+- ``event.preventDefault():`` 
+    Impede o comportamento padrão do formulário, que seria recarregar a página.
+- ``replace():`` 
+    Remove todos os caracteres não numéricos do CPF, deixando apenas os dígitos.
+- ``test():`` 
+    Verifica se uma string corresponde a uma determinada expressão regular. Neste caso, é usado para verificar se todos os dígitos do CPF são iguais.
+- ``substring():`` 
+    Extrai uma parte de uma string, permitindo acessar cada dígito do CPF individualmente.
+- ``parseInt():`` 
+    Converte uma string para um número inteiro.
+- ``if...else:`` 
+    Estrutura condicional para tomar decisões com base em diferentes condições.
+- ``for:`` 
+    Estrutura de repetição para iterar sobre os dígitos do CPF e realizar os cálculos necessários.
 
+## Lógica da validação CPF
+1. Obtenção do CPF: O valor do CPF é obtido do campo de entrada do formulário.
+2. Remoção de caracteres não numéricos: São removidos todos os caracteres que não sejam dígitos do CPF.
+3. Verificação da quantidade de dígitos: O CPF deve ter exatamente 11 dígitos.
+4. Verificação de dígitos iguais: É verificado se todos os dígitos do CPF são iguais, o que indicaria um CPF inválido.
+5. Cálculo do primeiro dígito verificador:
+    - É realizada uma soma ponderada dos primeiros 9 dígitos do CPF.
+    - O resto da divisão dessa soma por 11 é calculado.
+    - O resto é comparado com o décimo dígito do CPF.
+6. Cálculo do segundo dígito verificador:
+    - É realizada uma soma ponderada dos primeiros 10 dígitos do CPF (incluindo o primeiro dígito verificador).
+    - O resto da divisão dessa soma por 11 é calculado.
+    - O resto é comparado com o décimo primeiro dígito do CPF.
+7. Resultado: Se ambos os dígitos verificadores forem válidos, o CPF é considerado válido. Caso contrário, é inválido.
 
 ## Técnicas e tecnologias utilizadas
 * [<code><img height="32" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" alt="HTML5"/></code>](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
@@ -70,6 +109,7 @@ Este código JavaScript implementa uma função básica para validar um endereç
 * [Site de animações para css](https://storyset.com/search)
 * [Paleta de cores para html](https://paletadecolores.online/pt/azul/indigo/)
 * [Conversor de MP4 para Gif](https://cloudconvert.com/)
+* [Gid divisor de texto](https://steemit.com/pt/@coyotelation/20-divisores-de-texto-em-gif-apenas-copie-e-cole-confira)
 
 
 ## Autor(a)
